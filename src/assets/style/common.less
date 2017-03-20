@@ -1,0 +1,122 @@
+@charset "utf-8";
+/*
+    name:   style.less
+    updata: 2016/11/18
+ */
+
+
+html,
+body{ height: 100%; }
+/**
+ * 移动设备 media query
+ * 应用于 641px 下设备
+ * 移动设备基本字体大小 16px
+ **/
+html {font-size : 20px;}
+@media only screen and (min-width: 401px){ html { font-size: 25px !important; } }
+@media only screen and (min-width: 428px){ html { font-size: 26.75px !important; } }
+@media only screen and (min-width: 481px){ html { font-size: 30px !important; } }
+@media only screen and (min-width: 569px){ html { font-size: 35px !important; } }
+@media only screen and (min-width: 641px){ html { font-size: 40px !important; } }
+
+
+div,
+span,
+p,
+dl,
+dt,
+a,
+button       { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); -webkit-user-select: none; -moz-user-focus: none; -moz-user-select: none;}
+button,
+input,
+optgroup,
+select,
+textarea     { box-sizing: border-box; color: inherit; font: inherit; margin: 0; outline: none; padding: 0; margin: 0; }
+.container   { width: 100%; overflow: hidden;}
+.flex        { display: -webkit-flex; display: flex;}
+.rel         { position: relative; }
+.sta         { position: static; }
+.abs         { position: absolute; }
+.fix         { position: fixed; }
+.left        { float: left; }
+.right       { float: right; }
+.tn          { white-space: nowrap; word-wrap: normal; /* for IE */ }
+.wfull       { width: 100%!important; }
+.show        { display: block; }
+.hide        { display: none; }
+.font        { font-family: "微软雅黑", Arial, sans-serif; }
+.db          { display: block; }
+.dib         { display: inline-block; }
+.bsbb        { box-sizing: border-box; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6                   { font-weight: normal; margin: 0; padding: 0; }
+ul,ol                { list-style: none; -webkit-padding-start: 0; padding: 0px; margin: 0px; }
+i,em                   { font-style: normal; }
+p                    { margin: 0px; padding: 0px; }
+body                 { .font; .rel; width: 100%; max-width: 640px; margin: 0 auto; background: #F2F2F2; }
+input                { font-size: 0.14rem; }
+input[type="submit"],
+input[type="button"],
+input[type="text"]   { -webkit-appearance: none !important; border-radius: 0 !important; }
+img                  { .db; max-width: 100%; }
+html,
+a                    { text-decoration: none; color: #333; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale; }
+.noSelect            { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+.clearfix:before,
+.clearfix:after      { content: ""; display: table; }
+.clearfix:after      { clear: both; }
+.clearfix            { zoom: 1; }
+.smoothing           { -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale; }
+.m-icon 			 { .db; height: 0.8rem; width: 0.8rem; background-position: center; background-size: cover; }
+
+.icon-lady 		     { background-image: url(../../assets/images/icon/icon-lady.png); }
+
+
+
+
+// custom less
+.box-title {
+	.db;
+	.rel;
+	margin-bottom: 0.4rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	color: @gray;
+	font-size: .8rem;
+	&:before {
+		.scaleY(lighten(@gray, 70%),left,bottom);
+	}
+}
+
+.m-flexView {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	height: 100%;
+	min-width: 300px;
+	max-width: 640px;
+}
+
+.m-scrollView {
+	position: relative;
+	height: 100%;
+	flex: 1;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	width: 100%;
+}
+
+/** 针对浏览器手机浏览 **/
+html {background: #000;}
+@media only screen and (min-width: 769px){
+	html {font-size: 20px !important;}
+	body {
+		height: 568px; width: 320px; margin: -284px auto 0; position: relative; top: 50%;
+	}
+}

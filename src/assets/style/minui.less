@@ -1,0 +1,68 @@
+@import './common.less';
+
+/**
+ * 按钮颜色设置
+ **/
+.btn-color(@color, @bool:true){
+    background: @color;
+    color: @white;
+    & when (@bool = true) {
+        &:active {
+            background: darken(@color, 10%);
+        }
+    }
+    &.btn-lighten {
+        background: lighten(@color, 15%);
+    }
+}
+
+.scaleY (@color,@l,@t) {
+    display: block;
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid @color;
+    width: 100%;
+    transform: scaleY(0.5);
+    transform-origin: 0 0;
+    & when (@l = left) {
+        left: 0;
+    }
+    & when (@l = right) {
+        right: 0;
+    }
+    & when (@t = top) {
+        top: 0;
+    }
+    & when (@t = bottom) {
+        bottom: 0;
+    }
+}
+.scaleX (@color,@l,@t) {
+    display: block;
+    content: '';
+    position: absolute;
+    border-right: 1px solid @color;
+    height: 100%;
+    transform: scaleX(0.5);
+    transform-origin: 0 0;
+    & when (@l = left) {
+        left: 0;
+    }
+    & when (@l = right) {
+        right: 0;
+    }
+    & when (@t = top) {
+        top: 0;
+    }
+    & when (@t = bottom) {
+        bottom: 0;
+    }
+}
+
+
+@black: #000;
+@gray: #333;
+@success: #42b983;
+@warning: #e09e1c;
+@danger: #dc2c52;
+@white: #FFFFFF;
